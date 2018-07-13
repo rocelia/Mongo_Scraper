@@ -1,0 +1,36 @@
+<div class="container"></div>
+
+<div id="container">
+  <img class="newspaperphoto" src="images/newspaper.jpg" alt="newspaperimg">
+  <br>
+  <div class="col-md-12 jumbotron">
+    <div class="text-center">
+      <i> Saved Articles </i>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    {{#if article}}
+    <div class="panel panel default">
+      <h4>{{this.title}}</h4>
+    </div>
+    <div class="panel-body">
+      <p>{{this.summary}}</p>
+      <a href={{this.link}} target="_blank>{{this.link</a>
+      <br><br>
+      <button type="button" class="btn btn-success addNote" data-toggle="modal" data-target="#noteModal{{this._id}}" data-id={{this._id}>Add a Note</button>
+      
+      <button type="button" class="btn btn-danger delete" data-id={{this._id}}>Delete</button>
+    </div>
+
+    {{/each}}
+    {{else}}
+    <div class = panel panel-default">
+      <div class="panel body">
+        <h4>Oops. We don't have any new articles.</h4>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+
+</div>
